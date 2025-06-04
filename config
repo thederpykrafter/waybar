@@ -10,8 +10,8 @@
         "hyprland/workspaces": {
             "format": "{icon}",
             "format-icons": {
-                "active": "",
-                "default": "",
+                "active": "",
+                "default": "󰮍",
                 "empty": ""
             },
             "persistent-workspaces": {
@@ -20,7 +20,7 @@
         },
         "custom/notification": {
             "tooltip": false,
-            "format": " ",
+            "format": "   ",
             "on-click": "swaync-client -t -sw",
             "escape": true
         },
