@@ -81,7 +81,7 @@
             "tooltip-format": "{} updates available"
         },
         "custom/expand": {
-            "format": " ",
+            "format": "  ",
             "tooltip": false
         },
         "custom/endpoint":{
@@ -95,7 +95,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand","cpu","memory","temperature","custom/endpoint"],
+            "modules": ["custom/expand","cpu","memory","temperature","custom/gpu","custom/endpoint"],
         },
         "cpu": {
             "format": "󰻠",
@@ -107,6 +107,14 @@
         "temperature": {
             "critical-threshold": 80,
             "format": "",
+            "tooltip-format": "CPU: {} C"
+        },
+        "custom/gpu": {
+          "exec": "nvidia-smi -q -d TEMPERATURE | grep 'GPU Current' | sed 's/.*: // ; s/ C//'",
+          "format": "  ",
+          "tooltip-format": "GPU: {} C",
+          "return-type": "",
+          "interval": 1
         },
         "tray": {
             "icon-size": 14,
