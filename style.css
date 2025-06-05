@@ -165,12 +165,14 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
+#cpu,
+#custom-gpu-usage{
     background-color: #2ecc71;
     color: #000000;
 }
 
-#memory {
+#memory,
+#custom-gpu-memory{
     background-color: #9b59b6;
 }
 
@@ -223,7 +225,7 @@ label:focus {
 }
 
 #temperature,
-#custom-gpu{
+#custom-gpu-temp{
     background-color: #f0932b;
 }
 
