@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["custom/notification","custom/pacman"],
+        "modules-left": ["custom/notification", "custom/updates"],
         "modules-center": ["group/expand","hyprland/workspaces","battery"],
         "modules-right": ["bluetooth","tray","clock"],
 
@@ -70,15 +70,16 @@
                 "󰁹"
             ],
         },
-        "custom/pacman": {
-            "format": "󰅢  {}",
-            "interval": 30,   
-            "exec": "checkupdates | wc -l",
-            "exec-if": "exit 0",
-            "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-            "signal": 8,
-            "tooltip": true,
-            "tooltip-format": "{} updates available"
+        "custom/updates": {
+          "on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+          "format": "{} {icon}",
+          "return-type": "json",
+          "format-icons": {
+            "has-updates": " ",
+            "updated": "󰅠 "
+          },
+          "exec-if": "which waybar-module-pacman-updates",
+          "exec": "waybar-module-pacman-updates"
         },
         "custom/expand": {
             "format": "  ",
