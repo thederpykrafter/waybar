@@ -2,7 +2,7 @@
         "layer": "top",
         "position": "top",
         "reload_style_on_change": true,
-        "modules-left": ["battery", "custom/updates"],
+        "modules-left": ["custom/power","battery", "custom/updates"],
         "modules-center": ["group/expand-left","hyprland/workspaces","group/expand-right"],
         "modules-right": ["bluetooth","tray","clock","custom/notification"],
 
@@ -17,6 +17,12 @@
             "persistent-workspaces": {
                 "*": [ 1,2,3,4,5 ]
             }
+        },
+        "custom/power": {
+            "format": " ⏻ ",
+            "tooltip": false,
+            "justify": "center",
+            "on-click": "wlogout --protocol layer-shell"
         },
         "custom/notification": {
             "tooltip": false,
